@@ -1,8 +1,7 @@
-- name: "manage worker1 and 2"
-  hosts: all
-  become: true
-  tasks:
-  - name: "ensure leo user exists"
-    user:
-     name: leo
-     state: present
+- hosts: all
+  remote_user: ansible
+  become: yes
+  tasks: 
+    - name: Ping all nodes
+      action: ping
+
